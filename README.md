@@ -5,7 +5,7 @@ So i was pretty annoyed that with v4 of Strapi, there was no docker options, so 
 [mlxdev/strapi-v4-docker](https://hub.docker.com/repository/docker/mlxdev/strapi-v4-docker)
 
 ## Why even go down this road?
-Well, i've been trying to get my homelab up and running specifically with kubernetes, and I wanted to be able to self-host a headless cms. With this docker project, I am able to create [this helm chart]() and deploy a highly available Strapi service on kubernetes!
+Well, i've been trying to get my homelab up and running specifically with kubernetes, and I wanted to be able to self-host a headless cms. With this docker project, I am able to create [this helm chart](https://github.com/mlx-dev/strapi-v4-helm) and deploy a highly available Strapi service on kubernetes!
 
 ## How I go to this state
 I basically followed [these steps](https://blog.dehlin.dev/docker-with-strapi-v4) to get the main generic Strapi up and running with docker.
