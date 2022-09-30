@@ -1,0 +1,19 @@
+name: Docker Image develop Push
+
+on:
+  push:
+    branches: [ "develop" ]
+    paths-ignore: 
+      - '**.md'
+      - '**/.github/workflows/**'
+
+jobs:
+
+  build:
+    uses: mlx-dev/strapi-v4-docker/.github/workflows/WC-Docker-Image-Build-Push.yml@main
+    with:
+      pushBuild: true
+      isRcBuild: true
+    secrets:
+      DOCKER_HUB_USER: ${{ secrets.DOCKER_HUB_USER }}
+      DOCKER_HUB_ACCESS_TOKEN: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
