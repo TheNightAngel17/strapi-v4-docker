@@ -13,6 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - 
+        name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y.%m.%d.%H%M%S')"
       -
         name: Checkout 
         uses: actions/checkout@v3
@@ -32,7 +36,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: false
-          tags: ${{ secrets.DOCKER_HUB_USER }}/strapi-v4-docker:CI-${{ date + '%Y.%m.%d.%H%M%S' }}
+          tags: ${{ secrets.DOCKER_HUB_USER }}/strapi-v4-docker:${{ steps.date.outputs.date }}
           
           
         
