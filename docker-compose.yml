@@ -3,7 +3,7 @@ services:
   strapi:
     container_name: strapi
     build: .
-    image: mlxdev/strapi-v4-docker:latest
+    image: mlxdev/strapi-v4-docker:4.4.1.0
     restart: unless-stopped
     env_file: .env
     environment:
