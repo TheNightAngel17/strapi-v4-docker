@@ -9,34 +9,4 @@ on:
 jobs:
 
   build:
-
-    runs-on: ubuntu-latest
-    
-    steps:
-      - 
-        name: Get current date
-        id: date
-        run: echo "::set-output name=date::$(date +'%Y.%m.%d.%H%M%S')"
-      -
-        name: Checkout 
-        uses: actions/checkout@v3
-      -
-        name: Login to Docker Hub
-        uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKER_HUB_USER }}
-          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-      -
-        name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
-      -
-        name: Build and push
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          file: ./Dockerfile
-          push: false
-          tags: ${{ secrets.DOCKER_HUB_USER }}/strapi-v4-docker:${{ steps.date.outputs.date }}
-          
-          
-        
+    uses: mlx-dev/strapi-v4-docker/.github/workflows/WC-Docker-Image-Build-Push.yml@main
