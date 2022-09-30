@@ -1,4 +1,4 @@
-# Introduction to this repo
+# strapi-v4-docker
 So i was pretty annoyed that with v4 of Strapi, there was no docker options, so I decided to go out and just build it the way I wanted. Feel free to use this implementation of Strapi - I'll try and make it as configurable as possible.
 
 ## I'm just here for DockerHub repo please
