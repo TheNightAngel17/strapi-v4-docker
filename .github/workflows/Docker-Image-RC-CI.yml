@@ -32,7 +32,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: false
-          tags: ${{ secrets.DOCKER_HUB_USER }}/strapi-v4-docker:${{ date + '%Y.%m.%d.%H%M%S' }}
+          tags: ${{ secrets.DOCKER_HUB_USER }}/strapi-v4-docker:CI-${{ date + '%Y.%m.%d.%H%M%S' }}
           
           
         
