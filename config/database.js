@@ -36,7 +36,7 @@ const db = {
 
 
 module.exports = {
-  connection: process.env.DB ? db[process.env.DB] || db.sqlite : db.sqlite,
+  connection: process.env.DATABASE_CLIENT ? db[process.env.DATABASE_CLIENT] || db.sqlite : db.sqlite,
 };
 
 // module.exports = ({ env }) => ({
