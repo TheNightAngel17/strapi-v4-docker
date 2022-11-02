@@ -1,7 +1,6 @@
 name: Docker Image develop PR
 
 on:
-  workflow_dispatch:
   pull_request:
     branches: [ "develop" ]
     paths-ignore: 
