@@ -10,10 +10,11 @@ on:
 jobs:
 
   build:
-    uses: mlx-dev/strapi-v4-docker/.github/workflows/WC-Docker-Image-Build-Push.yml@main
+    uses: ./.github/workflows/WC-Docker-Image-Build-Push.yml
     with:
       pushBuild: false
       isRcBuild: false
+      dockerFile: './Dockerfile.Production'
     secrets:
       DOCKER_HUB_USER: ${{ secrets.DOCKER_HUB_USER }}
       DOCKER_HUB_ACCESS_TOKEN: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}

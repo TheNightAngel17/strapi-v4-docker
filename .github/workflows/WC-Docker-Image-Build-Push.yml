@@ -14,6 +14,10 @@ on:
         required: false
         type: string
         default: './Dockerfile'
+      dockerTag:
+        required: false
+        type: string
+        default: ${{ github.event.repository.name }}
     secrets:
       DOCKER_HUB_USER:
         description: 'DockHub User Name'
@@ -53,7 +57,7 @@ jobs:
           context: .
           file: ${{inputs.dockerFile}}
           push: ${{inputs.pushBuild}}
-          tags: ${{ secrets.DOCKER_HUB_USER }}/strapi-v4-docker:${{ steps.date.outputs.date }}
+          tags: ${{ secrets.DOCKER_HUB_USER }}/${{inputs.dockerTag}}:${{ steps.date.outputs.date }}-rc
       -
         name: Build and push Latest
         if: ${{!inputs.isRcBuild}}
@@ -62,4 +66,4 @@ jobs:
           context: .
           file: ${{inputs.dockerFile}}
           push: ${{inputs.pushBuild}}
-          tags: ${{ secrets.DOCKER_HUB_USER }}/strapi-v4-docker:latest
+          tags: ${{ secrets.DOCKER_HUB_USER }}/${{inputs.dockerTag}}:latest , ${{ secrets.DOCKER_HUB_USER }}/${{inputs.dockerTag}}:${{ steps.date.outputs.date }}
