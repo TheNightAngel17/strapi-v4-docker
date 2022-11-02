@@ -10,6 +10,10 @@ on:
         required: false
         type: boolean
         default: false
+      dockerFile:
+        required: falce
+        type: string
+        default: './Dockerfile'
     secrets:
       DOCKER_HUB_USER:
         description: 'DockHub User Name'
@@ -47,7 +51,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: ./Dockerfile
+          file: ${{inputs.dockerFile}}
           push: ${{inputs.pushBuild}}
           tags: ${{ secrets.DOCKER_HUB_USER }}/strapi-v4-docker:${{ steps.date.outputs.date }}
       -
@@ -56,6 +60,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: ./Dockerfile
+          file: ${{inputs.dockerFile}}
           push: ${{inputs.pushBuild}}
           tags: ${{ secrets.DOCKER_HUB_USER }}/strapi-v4-docker:latest
