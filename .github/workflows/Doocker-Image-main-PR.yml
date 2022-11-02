@@ -14,6 +14,7 @@ jobs:
     with:
       pushBuild: false
       isRcBuild: false
+      dockerFile: './Dockerfile.Prod'
     secrets:
       DOCKER_HUB_USER: ${{ secrets.DOCKER_HUB_USER }}
       DOCKER_HUB_ACCESS_TOKEN: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}

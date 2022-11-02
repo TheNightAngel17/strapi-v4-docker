@@ -14,6 +14,7 @@ jobs:
     with:
       pushBuild: true
       isRcBuild: true
+      dockerFile: './Dockerfile.Develop'
     secrets:
       DOCKER_HUB_USER: ${{ secrets.DOCKER_HUB_USER }}
       DOCKER_HUB_ACCESS_TOKEN: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
