@@ -10,7 +10,7 @@ on:
 jobs:
 
   build:
-    uses: ${{ github.repository }}/.github/workflows/WC-Docker-Image-Build-Push.yml@main
+    uses: ./.github/workflows/WC-Docker-Image-Build-Push.yml@main
     with:
       pushBuild: false
       isRcBuild: false
